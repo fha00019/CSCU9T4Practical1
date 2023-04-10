@@ -17,6 +17,12 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JTextField mins = new JTextField(2);
     private JTextField secs = new JTextField(2);
     private JTextField dist = new JTextField(4);
+    private JTextField terrain = new JTextField(0);
+    private JTextField tempo = new JTextField(0);
+    private JTextField Repetitions = new JTextField(2);
+    private JTextField Recovery = new JTextField(2);
+    private JTextField where = new JTextField(7);
+    
     private JLabel labn = new JLabel(" Name:");
     private JLabel labd = new JLabel(" Day:");
     private JLabel labm = new JLabel(" Month:");
@@ -25,6 +31,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labmm = new JLabel(" Mins:");
     private JLabel labs = new JLabel(" Secs:");
     private JLabel labdist = new JLabel(" Distance (km):");
+    private JLabel labt = new JLabel(" Terrain:");
+    private JLabel labte = new JLabel(" Tempo:");
+    private JLabel labp = new JLabel(" Pool/Outdoor:");
+    private JLabel labge = new JLabel(" Recoverty");
+    private JLabel labnum = new JLabel(" Repetitions:");
     private JButton addR = new JButton("Add");
     private JButton lookUpByDate = new JButton("Look Up");
 
@@ -114,7 +125,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int d = Integer.parseInt(day.getText());
         int y = Integer.parseInt(year.getText());
         outputArea.setText("looking up record ...");
-        String message = myAthletes.lookupEntry(d, m, y);
+        String message = myAthletes.Lookup(d, m, y);
         return message;
     }
 

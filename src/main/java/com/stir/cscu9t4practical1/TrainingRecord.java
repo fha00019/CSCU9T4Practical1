@@ -20,7 +20,7 @@ public class TrainingRecord {
    } // addClass
    
    // look up the entry of a given day and month
-   public String lookupEntry (int d, int m, int y) {
+   public String Lookup (int d, int m, int y) {
        ListIterator<Entry> iter = tr.listIterator();
        String result = "No entries found";
        while (iter.hasNext()) {
@@ -31,6 +31,26 @@ public class TrainingRecord {
        return result;
    } // lookupEntry
    
+   public String Findentry  (int d, int m, int y) {
+       ListIterator<Entry> iter = tr.listIterator();
+       String result = "";
+       while (iter.hasNext()) {
+          Entry current = iter.next();
+          if (current.getDay()==d && current.getMonth()==m && current.getYear()==y) 
+             result = result+current.getEntry();
+            }
+       return result;
+   } 
+   public String Removeentry  (int d, int m, int y, String n) {
+       ListIterator<Entry> iter = tr.listIterator();
+       String result = "";
+       while (iter.hasNext()) {
+          Entry current = iter.next();
+          if (current.getDay()==d && current.getMonth()==m && current.getYear()==y && n.equals(current.getName())) 
+             result = result+current.getEntry();
+            }
+       return result;
+   }
    
   
    public int getNumberOfEntries(){
